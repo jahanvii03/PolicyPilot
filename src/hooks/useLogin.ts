@@ -11,7 +11,8 @@ export  function useLogin() {
   const loginUser = async ({ username, password }: LoginCredentials) => {
     setError("");
     setIsLoading(true);
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth/login` || "";
+// const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth/login` || "";
+const API_URL="https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net/api/auth/login"
 
     try {
       const response = await fetch(API_URL, {

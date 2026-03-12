@@ -9,7 +9,8 @@ export interface ChatMessage {
   sources?: number[];
 }
 
-const API_URL =import.meta.env.VITE_API_BASE_URL || ""
+// const API_URL =import.meta.env.VITE_API_BASE_URL || ""
+const API_URL="https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net"
 // }/api/chat/stream` || "";
 
 const uuid = () => Math.random().toString(36).slice(2);
