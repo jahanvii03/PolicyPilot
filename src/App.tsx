@@ -1,11 +1,24 @@
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import { LoginPage } from "./pages/Login";
+import { ChatPage } from "./pages/ChatPage";
 
 function App() {
   return (
-   <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <h1 className="text-3xl font-bold text-blue-600">Tailwind works</h1>
-    </div>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<ProtectedRoute />}>
+            <Route>
+              <Route path="/" element={<ChatPage />} />
+            </Route>
+          </Route>
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
-export default App
-
+export default App;
