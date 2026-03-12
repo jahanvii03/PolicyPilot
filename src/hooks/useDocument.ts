@@ -5,7 +5,7 @@ export function useDocuments() {
   const [documents, setDocuments] = useState<PolicyDocument[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/chat/policies`;
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/chat/policies` || "";
 
   useEffect(() => {
     const fetchDocuments = async () => {
