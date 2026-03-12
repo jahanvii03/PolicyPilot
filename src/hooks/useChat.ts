@@ -9,7 +9,10 @@ export interface ChatMessage {
   sources?: number[];
 }
 
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/chat/stream` || "";
+const API_URL =import.meta.env.VITE_API_BASE_URL || ""
+// }/api/chat/stream` || "";
+console.log(API_URL);
+
 const uuid = () => Math.random().toString(36).slice(2);
 function normalizeAssistantText(text: string) {
   const normalized = text
@@ -123,7 +126,7 @@ export function useChat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(`${API_URL}/api/chat/stream`, {
         method: "POST",
         headers: {
           Accept: "text/event-stream",
