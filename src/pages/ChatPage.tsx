@@ -6,7 +6,7 @@ import { DocumentList } from "../components/documents/DocumentList";
 
 export function ChatPage() {
   const { messages, isLoading, sendMessage } = useChat();
-  const [activeTab, setActiveTab] = useState<"chat" | "docs">("chat");
+  const [activeTab] = useState<"chat" | "docs">("chat");
 
   return (
     <div className="h-screen bg-slate-50 flex flex-col overflow-hidden">
