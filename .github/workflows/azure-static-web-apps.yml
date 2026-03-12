@@ -29,7 +29,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_API_URL: https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net   # << Your backend URL here
+          VITE_API_BASE_URL: https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net   # << Your backend URL here
  
       # 5️⃣ Deploy to Azure Static Web Apps
       - name: Deploy to Azure Static Web App
