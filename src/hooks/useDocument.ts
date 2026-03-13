@@ -5,10 +5,8 @@ export function useDocuments() {
   const [documents, setDocuments] = useState<PolicyDocument[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-// const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/chat/policies` || "";
-const API_URL="https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net/api/chat/policies"
-
-console.log(import.meta.env.VITE_API_BASE_URL);
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api/chat/policies` || "";
+// const API_URL="https://hrpoc-fqbvc9g7gtdrb9be.southindia-01.azurewebsites.net/api/chat/policies"
 
   useEffect(() => {
     const fetchDocuments = async () => {
